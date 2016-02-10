@@ -1,6 +1,12 @@
 List all of the first names for AddressBook.name="Pharetra Ut Limited"
 The first and last letters should be capitalized
 
+
+Using a JOIN (Thanks Codrin!):
+select concat (substring(Entry.firstName, 1, length(Entry.firstName)-1),upper(substring(Entry.firstName, -1))) from Entry join AddressBook on Entry.addressBookId=AddressBook.id where AddressBook.name="Pharetra Ut Limited";
+
+
+WITHOUT A JOIN...
 There are two ways to grab the last charcter of each name:
 
 Using RIGHT():
@@ -8,6 +14,8 @@ select concat ((trim(trailing (right(Entry.firstName, 1)) from (Entry.firstName)
 
 Using SUBSTRING():
 select concat ((trim(trailing (substring(Entry.firstName, -1)) from (Entry.firstName))),(upper(substring(Entry.firstName, -1)))) from Entry where addressBookId = (select id from AddressBook where name="Pharetra Ut Limited");
+
+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
