@@ -1,0 +1,4 @@
+List all of the phone numbers for Jenkins, Charlotte
+
+
+select * from Phone join Entry on Entry.id=Phone.entryId where firstName='Charlotte' && lastName='Jenkins';

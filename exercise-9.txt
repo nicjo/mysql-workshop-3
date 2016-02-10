@@ -1,0 +1,5 @@
+List all Account emails with AddressBook containing Phone numbers with a country code
+
+
+select email from Account join AddressBook on Account.id=AddressBook.accountId join Entry on AddressBook.id=Entry.addressBookId join Phone on Entry.id=Phone.entryId where Phone.content like '1-%';
+

@@ -1,0 +1,5 @@
+List all possible domain name values for ElectronicMail (email@domain.name)
+
+
+select substring(ElectronicMail.content, (instr(ElectronicMail.content, '@')) +1) as kickass from ElectronicMail group by kickass;
+

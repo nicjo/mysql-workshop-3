@@ -1,0 +1,4 @@
+List all of the person names born between 8PM and 9PM but not in the month of February
+
+
+select * from Entry where ((hour(birthday)) = 20) and ((month(birthday)!= 2));
